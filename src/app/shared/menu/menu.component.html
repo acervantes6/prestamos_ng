@@ -1,18 +1,32 @@
- <p>
+<header>
     <mat-toolbar color="primary">
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>My App</span>
+      <span>Prestamos MX</span>
+      <span class="spacer1"></span>
+        <button mat-button color="accent">Préstamos</button>
+        <button mat-button color="accent">Créditos</button>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
+
+        <div *ngIf="userLogged | async as user; else btnSignIn">
+          <button mat-button [matMenuTriggerFor]="menu">{{user.email}}</button>
+            <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="login" (click)="logOut()">Salir</button>
+        </mat-menu>
+      </div>
     </mat-toolbar>
-  </p>
+
+  <ng-template #btnSignIn>
+    <button mat-raised-button routerLink="/login">Iniciar Sesión</button>
+  </ng-template>
+</header>
+
+    
+  
+
+
+  
 
 
  
