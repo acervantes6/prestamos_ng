@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         alert("User not found, If you don't have an account, register!");
         return;
       };
-      this.router.navigate(['/list'])
+      this.router.navigate(['/loans'])
     }).catch(err => {})
   }
 

@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     const { email, password } = this.contactForm.value;
     this.authService.register(email, password).then(() => {
         this.database.create('users', this.user);
-        this.router.navigate(['/list']);
+        this.router.navigate(['/loans']);
 
     }).catch(err => {
       alert("User already exist, verify your data!");

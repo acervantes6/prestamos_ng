@@ -1,0 +1,16 @@
+.simulator-card {
+    width: 80%;
+    height: 55%;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  *mat-grid-tile {
+    background: lightblue;
+  }
+ table {
+  width: 90%;
+  height: 60%;
+}
+mat-slider {
+  width: 300px;
+}

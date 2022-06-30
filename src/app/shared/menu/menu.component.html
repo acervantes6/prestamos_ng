@@ -3,10 +3,12 @@
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Prestamos MX</span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink=" /'' ">
+        Prestamos MX
+      </button>
       <span class="spacer1"></span>
-        <button mat-button color="accent">Préstamos</button>
-        <button mat-button color="accent">Créditos</button>
+        <button mat-button color="accent">Ayuda</button>
+        <button mat-button color="accent">Contacto</button>
       <span class="example-spacer"></span>
 
         <div *ngIf="userLogged | async as user; else btnSignIn">

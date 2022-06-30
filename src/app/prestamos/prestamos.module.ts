@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrestamosComponent } from './prestamos.component';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 
 
@@ -12,7 +13,8 @@ import { PrestamosComponent } from './prestamos.component';
     PrestamosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AngularMaterialModule
   ]
 })
 export class PrestamosModule { }

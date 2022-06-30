@@ -1,5 +1,37 @@
 .example-card {
-    max-width: 300px;
-    margin-top: 30px;
+  margin-top: 50px;
+  margin-left: 400px;
+  width: 30%;
+  height: 50%;
+}
+
+  .background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+    object-position: 50% 0;
+    -o-object-position: 50% 0;
+    z-index: -1;
   }
+ 
+  .h1, h1 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    font-size: medium;
+  }
+
   

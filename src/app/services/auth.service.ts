@@ -7,22 +7,22 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
 
-  constructor(private aFaireAuth: AngularFireAuth) { }
+  constructor(private aFireAuth: AngularFireAuth) { }
 
   register(email: string, password: string) {
-    return this.aFaireAuth.createUserWithEmailAndPassword(email, password);
+    return this.aFireAuth.createUserWithEmailAndPassword(email, password);
 }
 
   login(email: string, password: string) {
-    return this.aFaireAuth.signInWithEmailAndPassword(email, password);
+    return this.aFireAuth.signInWithEmailAndPassword(email, password);
 }
 
   getUserLogged(){
-    return this.aFaireAuth.authState;
+    return this.aFireAuth.authState;
 }
 
   logout(){
-    this.aFaireAuth.signOut();
+    this.aFireAuth.signOut();
 }
 
 }
