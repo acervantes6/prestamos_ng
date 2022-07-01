@@ -1,64 +1,71 @@
-
-    <mat-grid-list cols="2" rowHeight="1:1">
-        <mat-grid-tile>
-            <mat-card class="simulator-card">
-                <mat-card-title>Simula tu préstamo personal</mat-card-title>
-                <hr>  
-                    <mat-card-subtitle>Descubre cuánto pagarías por tu préstamo.</mat-card-subtitle>
-                    <mat-card-subtitle>¿Cuánto necesitas?</mat-card-subtitle>
-                            <mat-slider
-                                thumbLabel
-                                [displayWith]="formatLabel"
-                                tickInterval="10000"
-                                step="1000"
-                                min="9000"
-                                max="100000"
-                                aria-label="units">
-                            </mat-slider>
-                            <label class="example-value-label">Values</label>
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+          <mat-card class="simulator-card">
+              <mat-card-title>Solicita tu préstamo personal</mat-card-title>
+                <hr>
+                <br>  
+                  <mat-form-field appearance="fill">
+                    <mat-label>Selecciona una cuenta</mat-label>
+                    <mat-select>
+                    <mat-option *ngFor="let user of users" [value]="user.value">
+                      {{user.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <br>
+                <br>
+                    <mat-slider
+                        thumbLabel
+                        [displayWith]="formatLabel"
+                        tickInterval="10000"
+                        step="1000"
+                        min="9000"
+                        max="100000"
+                        aria-label="units"
+                                >
+                    </mat-slider>
+                            <label class="example-value-label">Value$$$</label>
                             <mat-card-subtitle>Elige un monto</mat-card-subtitle>
                     <br>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Elige tu fecha de pago</mat-label>
+                      <input matInput [matDatepicker]="picker">
+                      <mat-hint>MM/DD/YYYY</mat-hint>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
                     <br>
-                        <mat-card-subtitle>¿A qué plazo quieres pagarlo?</mat-card-subtitle>
-                            <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
-                                <mat-button-toggle value="6">6</mat-button-toggle>
-                                <mat-button-toggle value="12">12</mat-button-toggle>
-                                <mat-button-toggle value="18">18</mat-button-toggle>
-                                <mat-button-toggle value="24">24</mat-button-toggle>
-                                <mat-button-toggle value="30">30</mat-button-toggle>
-                                <mat-button-toggle value="36">36</mat-button-toggle>
-                            </mat-button-toggle-group>
-                            <br>
-                            <br>
+                    <br>
                             <div>
                                 <button 
                                     mat-raised-button color="accent" 
-                                    routerLink="/register">Cotizar
+                                    routerLink="/register">Enviar solicitud
                                 </button>
                             </div>
               </mat-card>
         </mat-grid-tile>
+
         <mat-grid-tile>
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
               
                 <ng-container matColumnDef="position">
-                  <th mat-header-cell *matHeaderCellDef>  </th>
+                  <th mat-header-cell *matHeaderCellDef>No.</th>
                   <td mat-cell *matCellDef="let element"> {{element.position}} </td>
                 </ng-container>
              
-                <ng-container matColumnDef="mejorTasa">
-                  <th mat-header-cell *matHeaderCellDef> Nuestra mejor tasa </th>
-                  <td mat-cell *matCellDef="let element"> {{element.mejorTasa}} </td>
+                <ng-container matColumnDef="monto">
+                  <th mat-header-cell *matHeaderCellDef> Monto</th>
+                  <td mat-cell *matCellDef="let element"> {{element.monto | currency }} </td>
                 </ng-container>
               
-                <ng-container matColumnDef="tasaPromedio">
-                  <th mat-header-cell *matHeaderCellDef> Nuestra tasa promedio </th>
-                  <td mat-cell *matCellDef="let element"> {{element.tasaPromedio}} </td>
+                <ng-container matColumnDef="nombre">
+                  <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
                 </ng-container>
               
-                <ng-container matColumnDef="tasaBancos">
-                  <th mat-header-cell *matHeaderCellDef> Tasa de los bancos </th>
-                  <td mat-cell *matCellDef="let element"> {{element.tasaBancos}} </td>
+                <ng-container matColumnDef="correo">
+                  <th mat-header-cell *matHeaderCellDef> Correo</th>
+                  <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
                 </ng-container>
               
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

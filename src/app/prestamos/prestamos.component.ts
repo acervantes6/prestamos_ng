@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ELEMENT_DATA } from './list.interface';
 
+interface User {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-prestamos',
   templateUrl: './prestamos.component.html',
   styleUrls: ['./prestamos.component.css']
 })
+
 export class PrestamosComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'mejorTasa', 'tasaPromedio', 'tasaBancos'];
+  displayedColumns: string[] = ['position', 'monto', 'nombre', 'correo'];
   dataSource = ELEMENT_DATA;
-  
+  users: User[] = [
+    {value: '0', viewValue: 'Account1'},
+    {value: '1', viewValue: 'Account2'},
+    {value: '2', viewValue: 'Account3'},
+  ];
 
   constructor() { }
 

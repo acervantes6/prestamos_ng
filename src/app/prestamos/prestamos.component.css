@@ -1,7 +1,7 @@
 .simulator-card {
     width: 80%;
-    height: 55%;
-    margin-top: 0px;
+    height: 60%;
+    margin-bottom: 80px;
     margin-left: 0px;
   }
   *mat-grid-tile {
@@ -9,7 +9,9 @@
   }
  table {
   width: 90%;
-  height: 60%;
+  height: 65%;
+  margin-bottom: 80px;
+  margin-left: 0px;
 }
 mat-slider {
   width: 300px;

@@ -13,4 +13,9 @@ describe('LoanService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should receive an array by default', async () => {
+    const loansList = await service.getLoans();
+    expect( typeof loansList ).toBe('Array');
+  })
 });
